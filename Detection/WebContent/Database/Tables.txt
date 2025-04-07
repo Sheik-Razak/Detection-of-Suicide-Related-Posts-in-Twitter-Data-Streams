@@ -1,0 +1,71 @@
+create database Detection_Of_Suicide;
+
+use Detection_Of_Suicide;
+
+
+CREATE TABLE `frequest` (
+  `id` int(11) NOT NULL auto_increment,
+  `rby` text,
+  `rto` text,
+  `status` text,
+  `dt` text,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `fsearch` (
+  `name` text,
+  `keyword` text,
+  `dt` text
+);
+
+CREATE TABLE `tcomment` (
+  `id` int(11) NOT NULL auto_increment,
+  `tname` text,
+  `hash` text,
+  `comments` text,
+  `user` text,
+  `dt` text,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `tserver` (
+  `name` text,
+  `pass` text
+);
+
+CREATE TABLE `ttopic` (
+  `id` int(11) NOT NULL auto_increment,
+  `tname` text,
+  `description` text,
+  `imagess` longblob,
+  `hash` text,
+  `dt` text,
+  `user` text,
+  `rank` int(11) default '0',
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` text,
+  `pass` text,
+  `email` text,
+  `mobile` text,
+  `addr` text,
+  `dob` text,
+  `gender` text,
+  `status` text,
+  `imagess` longblob,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `categories` (
+  `si_no` int(11) NOT NULL auto_increment,
+  `categorie` varchar(50) default NULL,
+  PRIMARY KEY  (`si_no`)
+);
+
+CREATE TABLE `filter` (
+  `categorie` text,
+  `filter` text
+);
